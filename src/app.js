@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3002;
+const {PORT} = require("./config.js")
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -20,4 +20,4 @@ app.use((err, req, res, next) => {
     res.status(500).json({ error: "Internal Server Error" });
 });
 
-app.listen(port, () => console.log(`Server listen in port ${port}\n http://localhost:${port}`));
+app.listen(PORT, () => console.log(`Server listen in port ${PORT}\n http://localhost:${PORT}`));
