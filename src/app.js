@@ -8,16 +8,14 @@ app.use(express.json());
 const indexRouter = require('./routes/index');
 const productsRouter = require('./routes/product');
 const usersRouter = require("./routes/users");
-const adminRouter = require("./routes/admin");
 
 app.use("/", indexRouter);
 app.use("/products", productsRouter);
 app.use("/users", usersRouter);
-app.use("/admin", adminRouter);
 
 app.use((err, req, res, next) => {
     console.error(err);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({ error: "Internal Server Error" })
 });
 
 app.listen(PORT, () => console.log(`Server listen in port ${PORT}\n http://localhost:${PORT}`));
