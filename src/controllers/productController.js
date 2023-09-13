@@ -1,7 +1,8 @@
 
 module.exports = {
-    list: (req, res) => {
-        res.send("lista de productos")
+    list: async (req, res) => {
+        const [rows] = await pool.query('SELECT * FROM products')
+        res.json(rows)
     },
     detail: (req, res) => {
         res.send("detalle de producto")
