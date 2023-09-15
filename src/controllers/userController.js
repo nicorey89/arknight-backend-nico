@@ -5,8 +5,10 @@ module.exports = {
         const [rows] = await pool.query('SELECT * FROM users')
         res.json(rows)
     },
-    detail: (req, res) => {
-        res.send("detalle de usuario")
+    detail: async (req, res) => {
+        const userID = req.params.id;
+        const [rows] = await pool.query(`SELECT * FROM users WHERE id=${userID}`)
+        res.json(rows)
     }, 
 
 }
