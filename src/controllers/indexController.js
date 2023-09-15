@@ -1,5 +1,6 @@
 module.exports = {
-    index: (req, res) => {
-        res.send("hola soy el home")
+    index: async (req, res) => {
+        const [data] = await pool.query('SELECT * FROM railway')
+        res.json(data)
     }
 }
