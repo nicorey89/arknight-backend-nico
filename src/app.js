@@ -6,14 +6,8 @@ app.use(express.static("public"));
 app.use(express.json());
 
 const indexRouter = require('./routes/index');
-const productsRouter = require('./routes/product');
-const usersRouter = require("./routes/users");
-const userCreateRouter = require("./routes/userCreate");
 
 app.use("/", indexRouter);
-app.use("/products", productsRouter);
-app.use("/users", usersRouter);
-app.use("/createuser", userCreateRouter);
 
 app.use((err, req, res, next) => {
     console.error(err);
