@@ -21,13 +21,13 @@ module.exports = {
             name,
             brand,
             price,
-            discount,
             description,
+            discount,
             dues,
             image
         } = req.body;
-        const result = await pool.query(`INSERT INTO products (name, brand, price, discount, description, dues, image) VALUES (${name}, ${brand}, ${price}, ${discount}, ${description}, ${dues}, ${image})`)
-        res.json(result)
+        const result = await pool.query(`INSERT INTO products (name, brand, price, description, discount, dues, image) VALUES ("${name}", "${brand}", "${price}", "${description}", "${discount}", "${dues}", "${image}")`)
+        
     },
     productDestroy: (req, res) => {
         res.send("hola soy el destroy de product")
