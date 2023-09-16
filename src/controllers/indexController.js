@@ -14,14 +14,14 @@ module.exports = {
         res.json(rows)
     },
     productEdit: (req, res) => {
-        res.send("hola soy el home")
+        res.send("hola soy la edicion de producto")
     },
     productCreate: async (req, res) => {
         const result = await pool.query('INSERT INTO products (name, brand, price, discount, description, dues, image) VALUES ("amoladora", "de walt", "1111", "10", "csjdcjsdcjdjcjsdbcjbdc", "3", "defaultImage.jpg")')
         res.json(result)
     },
     productDestroy: (req, res) => {
-        res.send("hola soy el home")
+        res.send("hola soy el destroy de product")
     },
     usersList: async (req, res) => {
         const [rows] = await pool.query('SELECT * FROM users')
@@ -37,9 +37,9 @@ module.exports = {
         res.json(result)
     },
     userEdit: (req, res) => {
-        res.send("hola soy el home")
+        res.send("hola la edicion de usuario")
     },
     userDestroy: (req, res) => {
-        res.send("hola soy el home")
+        res.send("hola soy el destroy de usuario")
     },
 }
