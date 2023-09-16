@@ -11,7 +11,7 @@ module.exports = {
         res.json(rows)
     },   
     create: async (req, res) => {
-        const [rows] = await pool.query(`INSERT INTO users (name, email, pass) VALUES ("nicolas", "nico@mail.com", "112233")`)
+        const [rows] = await pool.query(`INSERT INTO users2 (name, email, pass) VALUES ("nicolas", "nico@mail.com", "112233")`)
         res.json(rows)
     }, 
 
