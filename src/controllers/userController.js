@@ -12,7 +12,7 @@ module.exports = {
     },   
     create: async (req, res) => {
         const [rows] = await pool.query(`INSERT INTO products (name, email, pass) VALUES ("nicolas", "nico@mail.com", "112233")`)
-        res.redirect("https://arknight-backend-nico-production.up.railway.app/users")
+        res.json(rows)
     }, 
 
 }
