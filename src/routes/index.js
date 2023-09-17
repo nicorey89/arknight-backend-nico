@@ -14,8 +14,8 @@ const {
     userDestroy} = require("../controllers/indexController");
 
 router.get("/", index);
-/* router.get("/users", usersList); */
-/* router.get("/products", productsList); */
+router.get("/users", usersList);
+router.get("/products", productsList);
 router.post("/products", productCreate);
 router.put("/products", productEdit);
 router.delete("/products", productDestroy);
