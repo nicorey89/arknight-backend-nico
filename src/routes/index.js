@@ -13,18 +13,16 @@ const {
     userEdit, 
     userDestroy} = require("../controllers/indexController");
 
-router
-    .get("/", index)
-    .get("/users", usersList)
-    .get("/products", productsList)
-    .post("/products", productCreate)
-    .get("/users/:id", userDetail)
-    .get("/products/:id", productDetail)
-    .get("/createuser", userCreate)
-    .get("/edituser/:id", userEdit)
-    .get("/editproduct/:id", productEdit)
-    .get("/destroyuser/:id", userDestroy)
-    .get("/destroyproduct/:id", productDestroy)
-
+router.get("/", index);
+router.get("/users", usersList);
+router.get("/products", productsList);
+router.get("/users/:id", userDetail);
+router.get("/products/:id", productDetail);
+router.get("/createuser", userCreate);
+router.get("/edituser/:id", userEdit);
+router.get("/editproduct/:id", productEdit);
+router.get("/destroyuser/:id", userDestroy);
+router.get("/destroyproduct/:id", productDestroy);
+router.post("/products", productCreate);
 
 module.exports = router;
