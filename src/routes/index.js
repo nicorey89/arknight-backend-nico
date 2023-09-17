@@ -16,15 +16,13 @@ const {
 router.get("/", index);
 router.get("/users", usersList);
 router.get("/products", productsList);
-router.post("/products", productCreate);
-router.put("/products", productEdit);
-router.delete("/products", productDestroy);
-/* router.get("/users/:id", userDetail);
+router.post("/products/create", productCreate);
+router.put("/products/:id", productEdit);
+router.delete("/products/:id", productDestroy);
+router.get("/users/:id", userDetail);
 router.get("/products/:id", productDetail);
 router.get("/createuser", userCreate);
 router.get("/edituser/:id", userEdit);
-router.get("/editproduct/:id", productEdit);
 router.get("/destroyuser/:id", userDestroy);
-router.get("/destroyproduct/:id", productDestroy); */
 
 module.exports = router;
