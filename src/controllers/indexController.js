@@ -17,7 +17,7 @@ module.exports = {
         res.send("hola soy la edicion de producto")
     },
     productCreate: async (req, res) => {
-        let {
+        const {
             name,
             brand,
             price,
@@ -27,8 +27,8 @@ module.exports = {
             image
         } = req.body;
 
-        const [rows] = await pool.query('INSERT INTO products (name, brand, price, description, discount, dues, image) VALUES (?,?,?,?,?,?,?)', [name,brand,price,description,discount,dues,image]);
-        res.json({rows})
+        const [rows] = await pool.query('INSERT INTO products(name, brand, price, description, discount, dues, image) VALUES (?,?,?,?,?,?,?)', [name, brand, price, description, discount, dues, image]);
+        res.json({ rows })
     },
     productDestroy: (req, res) => {
         res.send("hola soy el destroy de product")
