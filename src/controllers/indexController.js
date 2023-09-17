@@ -17,17 +17,9 @@ module.exports = {
         res.send("hola soy la edicion de producto")
     },
     productCreate: async (req, res) => {
-        const {
-            name,
-            brand,
-            price,
-            description,
-            discount,
-            dues,
-            image
-        } = req.body;
+        const { name, brand, price, description, discount, dues, image } = req.body
 
-        const [rows] = await pool.query('INSERT INTO products SET ?', [name, brand, price, description, discount, dues, image]);
+        const [rows] = await pool.query('INSERT INTO products (name, brand, price, description, discount, dues,image) VALUES (?,?,?,?,?,?,?)', [name, brand, price, description, discount, dues, image])
         res.send({
             id: rows.insertId,
             name,
