@@ -17,7 +17,8 @@ module.exports = {
         res.send("hola soy la edicion de producto")
     },
     productCreate: (req, res) => {
-        res.send(`hola soy la carga de producto`)
+        const { name } = req.body;
+        res.send(`hola soy la carga de producto ${name}`)
     },
     productDestroy: (req, res) => {
         res.send("hola soy el destroy de product")
