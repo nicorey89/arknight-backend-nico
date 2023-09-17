@@ -20,7 +20,7 @@ router
     .get("/users/:id", userDetail)
     .get("/products/:id", productDetail)
     .get("/createuser", userCreate)
-    .post("/createproduct", productCreate)
+    .get("/createproduct", productCreate)
     .get("/edituser/:id", userEdit)
     .get("/editproduct/:id", productEdit)
     .get("/destroyuser/:id", userDestroy)
