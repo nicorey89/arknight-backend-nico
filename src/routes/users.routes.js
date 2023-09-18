@@ -9,7 +9,7 @@ const {
 
 router.get("/users", usersList)
 router.get("/users/:id", userDetail)
-router.post("/users", userCreate)
+router.post("/users/create", userCreate)
 router.put("/users/:id", userEdit)
 router.delete("/users/:id", userDestroy)
 
