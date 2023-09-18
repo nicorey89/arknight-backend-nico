@@ -1,13 +1,14 @@
 const express = require("express");
 const app = express();
 const {PORT} = require("./config.js")
+const productRouter = require('./routes/products.routes.js');
+const userRouter = require('./routes/users.routes.js');
 
 app.use(express.static("public"));
 app.use(express.json());
 
-const indexRouter = require('./routes/index');
-
-app.use("/", indexRouter);
+app.use(productRouter);
+app.use(userRouter);
 
 app.use((err, req, res, next) => {
     console.error(err);
