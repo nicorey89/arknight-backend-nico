@@ -9,7 +9,7 @@ const {
 
 router.get("/products", productsList)
 router.get("/products/:id", productDetail)
-router.post("/products", productCreate)
+router.post("/products/create", productCreate)
 router.put("/products/:id", productEdit)
 router.delete("/products/:id", productDestroy)
 
