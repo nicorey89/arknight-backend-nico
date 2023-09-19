@@ -9,18 +9,21 @@ const userDetail = async (req, res) => {
     const [result] = await pool.query(`SELECT * FROM users WHERE id=${userId}`)
     res.json({result})
 };
-const userEdit = (req, res) => {
+const userEdit = async (req, res) => {
     const userId = req.params.id;
-    res.send(`hola soy la edicion de producto ${userId}`)
+    const { name, email, pass, adress, phone, country, location, avatar } = req.body;
+    const [rows] = await pool.query(`UPDATE products SET name = ?, email = ?, pass = ?, adress = ?, phone = ?, country = ?, location = ?, avatar = ? WHERE id=${userId}`, [name, email, pass, adress, phone, country, location, avatar])
+    res.json(rows)
 };
 const userCreate = async (req, res) => {
     const { name, email, pass, adress, phone, country, location, avatar } = req.body;
     const [rows] = await pool.query('INSERT INTO users (name, email, pass, adress, phone, country, location, avatar) VALUES(?,?,?,?,?,?,?,?)', [name, email, pass, adress, phone, country, location, avatar])
     res.json({rows})
 };
-const userDestroy = (req, res) => {
+const userDestroy = async (req, res) => {
     const userId = req.params.id;
-    res.send(`hola soy el destroy de product ${userId}`)
+    const [rows] = await pool.query(`DELETE FROM users WHERE id=${userId}`)
+    res.json(rows)
 }
 
 
