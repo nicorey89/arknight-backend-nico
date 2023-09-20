@@ -1,6 +1,7 @@
 const express = require("express");
+const jwt = require("jsonwebtoken");
 const app = express();
-const {PORT} = require("./config.js")
+const {PORT} = require("./config.js");
 const productRouter = require('./routes/products.routes.js');
 const userRouter = require('./routes/users.routes.js');
 
